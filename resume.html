@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>羅婉薰 | Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&family=Noto+Serif+TC:wght@300;600&family=Noto+Sans+TC:wght@300;400&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body class="index-page antialiased">
+    <div class="bg-blur-circle"></div>
+
+    <nav class="fixed-nav">
+        <div class="nav-content">
+            <div class="logo-area">
+                <div class="logo-box">LWX</div>
+            </div>
+            <button id="menuBtn" class="hamburger">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <div id="sideNav" class="side-menu">
+        <div id="navOverlay" class="menu-overlay"></div>
+        <div class="menu-content">
+            <button id="closeBtn" class="close-trigger">Close ✕</button>
+            <ul class="nav-links">
+                <li><a href="/" class="link-item"><span class="link-num">01</span><span class="link-text">Home</span></a></li>
+                <li><a href="/profile" class="link-item"><span class="link-num">02</span><span class="link-text">About</span></a></li>
+                <li><a href="/results" class="link-item"><span class="link-num">03</span><span class="link-text">Diagnosis</span></a></li>
+                <li><a href="/MIS" class="link-item"><span class="link-num">04</span><span class="link-text">MIS</span></a></li>
+                <li><a href="/resume" class="link-item active"><span class="link-num">05</span><span class="link-text">Resume</span></a></li>
+            </ul>
+        </div>
+    </div>
+
+    <main class="content-container reveal" style="max-width: 900px; margin: 160px auto 100px; padding: 0 30px; display: block;">
+        <header class="profile-header" style="text-align: center; margin-bottom: 100px;">
+            <h1 class="main-title" style="font-size: 3.5rem; font-family: 'Noto Serif TC', serif; font-weight: 300; color: #fff;">
+                羅 婉 薰 <span style="color: #d4af37; font-style: italic;">WanXun</span>
+            </h1>
+            <div style="width: 48px; height: 1px; background-color: #d4af37; margin: 32px auto 0;"></div>
+        </header>
+
+        <section class="info-section" style="border-top: 1px solid rgba(255, 255, 255, 0.1); margin-bottom: 80px;">
+            
+            <div class="info-row" style="display: flex; padding: 35px 20px; border-bottom: 1px solid rgba(255, 255, 255, 0.1); align-items: center; gap: 30px; flex-wrap: wrap;">
+                <div class="info-label" style="width: 150px; min-width: 150px; font-size: 12px; font-weight: 700; color: #d4af37; text-transform: uppercase; letter-spacing: 2px;">About Me</div>
+                <div class="info-value" style="flex: 2; min-width: 280px; font-size: 1.1rem; line-height: 1.8; font-weight: 300; color: rgba(255, 255, 255, 0.6);">
+                    熱衷於軟體開發與數據邏輯的資管學生。我享受在 <strong style="color: #fff;">Python</strong> 的後端世界與 <strong style="color: #fff;">Android</strong> 的前端體驗中尋找平衡。
+                </div>
+                <div style="flex: 1; min-width: 140px; display: flex; justify-content: center; align-items: center;">
+                    <div style="position: relative; width: 130px; height: 130px;">
+                        <div style="position: absolute; inset: -6px; border: 1px solid rgba(212, 175, 55, 0.3); border-radius: 50%;"></div>
+                        <img src="{{ url_for('static', filename='images/me.jpeg') }}" 
+                             alt="羅婉薰" 
+                             style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%; border: 2px solid #0f1113; filter: brightness(0.9);">
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-row" style="display: flex; padding: 35px 20px; border-bottom: 1px solid rgba(255, 255, 255, 0.1); align-items: flex-start;">
+                <div class="info-label" style="width: 150px; min-width: 150px; font-size: 12px; font-weight: 700; color: #d4af37; text-transform: uppercase; letter-spacing: 2px;">Education</div>
+                <div class="info-value" style="flex: 1; font-size: 1.1rem; line-height: 1.8; font-weight: 300; color: rgba(255, 255, 255, 0.6);">
+                    <strong style="color: #fff; display: block;">華南高商 普通科</strong>
+                    <span style="font-size: 0.875rem; display: block; margin-bottom: 12px; color: rgba(255, 255, 255, 0.4);">2022 - 2024</span>
+                    
+                    <strong style="color: #fff; display: block;">靜宜大學 資訊管理學系</strong>
+                    <span style="font-size: 0.875rem; display: block; color: rgba(255, 255, 255, 0.4);">2024 - Present</span>
+                </div>
+            </div>
+
+            <div class="info-row" style="display: flex; padding: 35px 20px; border-bottom: 1px solid rgba(255, 255, 255, 0.1); align-items: flex-start;">
+                <div class="info-label" style="width: 150px; min-width: 150px; font-size: 12px; font-weight: 700; color: #d4af37; text-transform: uppercase; letter-spacing: 2px;">Vision</div>
+                <div class="info-value" style="flex: 1; font-size: 1.1rem; line-height: 1.8; font-weight: 300; color: rgba(255, 255, 255, 0.6);">
+                    短期內希望專注於網頁開發及程式基礎、未來希望能精通資訊安全及網站架構
+                </div>
+            </div>
+
+            <div class="info-row" style="display: flex; padding: 35px 20px; border-bottom: none; align-items: flex-start;">
+                <div class="info-label" style="width: 150px; min-width: 150px; font-size: 12px; font-weight: 700; color: #d4af37; text-transform: uppercase; letter-spacing: 2px;">Connection</div>
+                <div class="info-value" style="flex: 1;">
+                    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin-top: 10px;">
+                        <a href="tel:0965376729" style="padding: 20px; text-decoration: none; color: #fff; background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.1); display: flex; flex-direction: column; align-items: center; transition: 0.3s;">
+                            <span style="font-size: 0.9rem; letter-spacing: 2px;">PHONE</span>
+                            <span style="font-size: 0.75rem; color: #d4af37;">0965376729</span>
+                        </a>
+                        <a href="mailto:parklor1013@gmail.com" style="padding: 20px; text-decoration: none; color: #fff; background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.1); display: flex; flex-direction: column; align-items: center; transition: 0.3s;">
+                            <span style="font-size: 0.9rem; letter-spacing: 2px;">EMAIL</span>
+                            <span style="font-size: 0.75rem; color: #d4af37;">parklor1013@gmail.com</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>© 2026 Lo Wan Xun. All rights reserved.</footer>
+
+    <script>
+        const menuBtn = document.getElementById('menuBtn');
+        const closeBtn = document.getElementById('closeBtn');
+        const sideNav = document.getElementById('sideNav');
+        const navOverlay = document.getElementById('navOverlay');
+
+        const toggleNav = () => {
+            sideNav.classList.toggle('active');
+            document.body.style.overflow = sideNav.classList.contains('active') ? 'hidden' : 'auto';
+        };
+
+        if (menuBtn) menuBtn.onclick = toggleNav;
+        if (closeBtn) closeBtn.onclick = toggleNav;
+        if (navOverlay) navOverlay.onclick = toggleNav;
+
+        gsap.registerPlugin(ScrollTrigger);
+        gsap.from(".reveal", { y: 50, opacity: 0, duration: 1.2, ease: "power3.out" });
+    </script>
+</body>
+</html>

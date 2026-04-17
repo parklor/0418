@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | 羅婉薰</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body class="miso-theme">
+    <nav class="fixed-nav">
+    <div class="nav-content">
+        <div class="logo-area">
+            <div class="logo-box">LWX</div>
+            <span class="nav-label">About Profile</span>
+        </div>
+        
+        <button id="menuBtn" class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </div>
+</nav>
+
+<div id="sideNav" class="side-menu">
+    <div id="navOverlay" class="menu-overlay"></div>
+    <div class="menu-content">
+        <button id="closeBtn" class="close-trigger">Close ✕</button>
+        <ul class="nav-links">
+            <li>
+                <a href="/" class="link-item">
+                    <span class="link-num">01</span>
+                    <span class="link-text">Home</span>
+                </a>
+            </li>
+            <li>
+                <a href="/profile" class="link-item active">
+                    <span class="link-num">02</span>
+                    <span class="link-text">About</span>
+                </a>
+            </li>
+            <li>
+                <a href="/results" class="link-item">
+                    <span class="link-num">03</span>
+                    <span class="link-text">Diagnosis</span>
+                </a>
+            </li>
+             <li>
+                <a href="/resume" class="link-item">
+                    <span class="link-num">04</span>
+                    <span class="link-text">MIS</span>
+                </a>
+            </li>
+            <li>
+                <a href="/resume" class="link-item">
+                    <span class="link-num">05</span>
+                    <span class="link-text">Resume</span>
+                </a>
+            </li>
+        </ul>
+        <div class="menu-footer">
+        </div>
+    </div>
+</div>
+
+<script>
+    const menuBtn = document.getElementById('menuBtn');
+    const closeBtn = document.getElementById('closeBtn');
+    const sideNav = document.getElementById('sideNav');
+    const navOverlay = document.getElementById('navOverlay');
+
+    const toggleNav = () => sideNav.classList.toggle('active');
+
+    menuBtn.addEventListener('click', toggleNav);
+    closeBtn.addEventListener('click', toggleNav);
+    navOverlay.addEventListener('click', toggleNav);
+</script>
+
+    <div class="container">
+        <div class="header-text reveal">
+            <p class="about-title">About me</p>
+        </div>
+
+        <div class="profile-info">
+            <div class="profile-text reveal">
+                <h1 class="name">羅婉薰</h1>
+                <p class="nickname-date">生日(2005.04.03)</p>
+                
+                <div class="contact">
+                    <h3>Contact</h3>
+                    <div class="contact-item">
+                        <i class="fab fa-instagram"></i>
+                        <span>parklor-0403</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="far fa-envelope"></i>
+                        <span>parklor1013@gmail.com</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="avatar-container reveal">
+                <div class="avatar-bg-watercolor"></div> 
+                <img src="{{ url_for('static', filename='images/me.jpeg') }}" class="avatar" alt="羅婉薰">
+            </div>
+        </div>
+
+        <div class="profile-table">
+            <div class="table-row reveal">
+                <div class="label">出生</div>
+                <div class="value">嘉義市</div>
+            </div>
+            <div class="table-row reveal">
+                <div class="label">學校</div>
+                <div class="value">靜宜大學</div>
+            </div>
+            <div class="table-row reveal">
+                <div class="label">系級</div>
+                <div class="value">資管二B</div>
+            </div>
+            <div class="table-row reveal">
+                <div class="label">性格</div>
+                <div class="value">開朗樂觀，喜歡嘗試新事物</div>
+            </div>
+            <div class="table-row reveal">
+                <div class="label">MBTI</div>
+                <div class="value">ENFP</div>
+            </div>
+            <div class="table-row reveal">
+                <div class="label">興趣</div>
+                <div class="value">聽音樂、出去玩</div>
+            </div>
+            <div class="table-row reveal">
+                <div class="label">座右銘</div>
+                <div class="value">既然無法改變現實，那就改變看待現實的視角</div>
+            </div>
+        </div>
+
+        <div class="extra-text reveal">
+            <p class="extra-title">目標</p>
+            <p>喜歡在網頁中創造美好體驗，希望能透過課程實現更多創意！</p>
+        </div>
+    </div>
+</body>
+</html>
