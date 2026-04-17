@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>羅婉薰 | Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&family=Noto+Serif+TC:wght@300;600&family=Noto+Sans+TC:wght@300;400&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body class="index-page antialiased" style="background-color: #0f1113; color: #ffffff; margin: 0; font-family: 'Montserrat', 'Noto Sans TC', sans-serif; min-height: 100vh; display: flex; align-items: center; justify-content: center; overflow-x: hidden;">
+    
+    <div class="bg-blur-circle" style="position: fixed; top: -150px; right: -100px; width: 600px; height: 600px; background: radial-gradient(circle, rgba(212, 175, 55, 0.07) 0%, transparent 70%); z-index: -1; filter: blur(60px);"></div>
+
+    <main class="hero-container" style="width: 100%; max-width: 1000px; padding: 40px; text-align: center;">
+        <header class="header-content" style="margin-bottom: 80px;">
+            <h1 class="main-title" style="margin-bottom: 30px;">
+                <span class="greeting" style="display: block; font-size: 1.2rem; letter-spacing: 8px; color: #d4af37; text-transform: uppercase; margin-bottom: 15px; font-weight: 300;">Welcome to My</span>
+                <span class="brand" style="display: block; font-size: 4rem; font-family: 'Noto Serif TC', serif; font-weight: 600; letter-spacing: 4px;">Digital Space</span>
+            </h1>
+            <div class="divider" style="width: 60px; height: 1px; background: #d4af37; margin: 0 auto 40px;"></div>
+            <p class="subtitle" style="font-size: 1.1rem; letter-spacing: 3px; color: rgba(255, 255, 255, 0.5); font-weight: 300;">
+                羅 婉 薰 • <span style="color: #fff;">Information Management</span>
+            </p>
+        </header>
+
+        <nav class="navigation">
+            <div class="button-grid" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 25px; max-width: 800px; margin: 0 auto;">
+                
+                <a href="/profile" class="nav-btn" style="padding: 40px; text-decoration: none; color: #fff; background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.1); display: flex; flex-direction: column; align-items: center; transition: all 0.4s ease;">
+                    <span class="btn-text" style="font-size: 1rem; letter-spacing: 3px; margin-bottom: 8px; font-weight: 500;">ABOUT ME</span>
+                    <span class="btn-desc" style="font-size: 0.8rem; color: #d4af37; opacity: 0.8;">關於我</span>
+                </a>
+
+                <a href="/results" class="nav-btn" style="padding: 40px; text-decoration: none; color: #fff; background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.1); display: flex; flex-direction: column; align-items: center; transition: all 0.4s ease;">
+                    <span class="btn-text" style="font-size: 1rem; letter-spacing: 3px; margin-bottom: 8px; font-weight: 500;">RESULTS</span>
+                    <span class="btn-desc" style="font-size: 0.8rem; color: #d4af37; opacity: 0.8;">何倫碼測驗</span>
+                </a>
+
+                <a href="/MIS" class="nav-btn" style="padding: 40px; text-decoration: none; color: #fff; background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.1); display: flex; flex-direction: column; align-items: center; transition: all 0.4s ease;">
+                    <span class="btn-text" style="font-size: 1rem; letter-spacing: 3px; margin-bottom: 8px; font-weight: 500;">MIS TEST</span>
+                    <span class="btn-desc" style="font-size: 0.8rem; color: #d4af37; opacity: 0.8;">MIS測試</span>
+                </a>
+
+                <a href="/resume" class="nav-btn" style="padding: 40px; text-decoration: none; color: #fff; background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.1); display: flex; flex-direction: column; align-items: center; transition: all 0.4s ease;">
+                    <span class="btn-text" style="font-size: 1rem; letter-spacing: 3px; margin-bottom: 8px; font-weight: 500;">RESUME</span>
+                    <span class="btn-desc" style="font-size: 0.8rem; color: #d4af37; opacity: 0.8;">履歷檔案</span>
+                </a>
+
+            </div>
+        </nav>
+
+        <footer class="minimal-footer" style="margin-top: 100px; font-size: 0.8rem; color: rgba(255, 255, 255, 0.3); letter-spacing: 1px;">
+            <p>&copy; 2026 Designed by Luo Wan-hsun</p>
+        </footer>
+    </main>
+
+    <style>
+        /* 增加滑鼠移入效果 */
+        .nav-btn:hover {
+            background: rgba(212, 175, 55, 0.05) !important;
+            border-color: #d4af37 !important;
+            transform: translateY(-5px);
+        }
+    </style>
+</body>
+</html>

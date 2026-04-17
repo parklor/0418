@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MIS | 羅婉薰</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;600&family=Noto+Sans+TC:wght@300;400&family=Outfit:wght@200;500&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body class="index-page bg-[#050505] text-white antialiased">
+
+    <div class="bg-glow"></div>
+    <div class="bg-blur-circle"></div>
+
+    <nav class="fixed-nav">
+    <div class="nav-content">
+        <div class="logo-area">
+            <div class="logo-box">LWX</div>
+            <span class="nav-label">Diagnosis Report</span>
+        </div>
+        
+        <button id="menuBtn" class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </div>
+</nav>
+
+<div id="sideNav" class="side-menu">
+    <div id="navOverlay" class="menu-overlay"></div>
+    <div class="menu-content">
+        <button id="closeBtn" class="close-trigger">CLOSE ✕</button>
+        <ul class="nav-links">
+            <li>
+                <a href="/" class="link-item">
+                    <span class="link-num">01</span>
+                    <span class="link-text">Home</span>
+                </a>
+            </li>
+            <li>
+                <a href="/profile" class="link-item">
+                    <span class="link-num">02</span>
+                    <span class="link-text">About</span>
+                </a>
+            </li>
+            <li>
+                <a href="/results" class="link-item"> <span class="link-num">03</span>
+                    <span class="link-text">Diagnosis</span>
+                </a>
+            </li>
+            <li>
+                <a href="/MIS" class="link-item active"> 
+                    <span class="link-num">04</span>
+                    <span class="link-text">MIS</span>
+                </a>
+            </li>
+            <li>
+                <a href="/resume" class="link-item">
+                    <span class="link-num">05</span>
+                    <span class="link-text">Resume</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+</div>
+
+    <main class="max-w-5xl mx-auto pt-48 px-8 pb-32">
+        
+        <header class="mb-24 reveal">
+            <h2 class="text-[#d4af37] tracking-[0.4em] text-[10px] mb-6 uppercase font-medium">Competency Assessment</h2>
+            <h1 class="text-6xl md:text-7xl font-serif mb-8 leading-tight">專業職能<br><span class="text-zinc-500 italic">Diagnosis.</span></h1>
+            <div class="flex flex-wrap items-center gap-6 text-zinc-500 text-sm font-light">
+                <span class="px-4 py-1 border border-zinc-800 rounded-full">UCAN 專業診斷</span>
+                <span class="px-4 py-1 border border-zinc-800 rounded-full italic">羅婉薰 / 資管二B</span>
+            </div>
+        </header>
+
+        <section class="grid md:grid-cols-3 gap-8 mb-40">
+            <div class="result-card p-8 bg-white/[0.02] border border-white/10 rounded-2xl reveal">
+                <h3 class="text-[#d4af37] text-xs tracking-widest mb-4 font-bold uppercase">優勢能力平均</h3>
+                <div class="text-5xl font-light mb-2">81 <span class="text-lg text-zinc-600">PR</span></div>
+                <p class="text-zinc-500 text-xs font-light">在紀錄撰寫與品質確保方面表現卓越。</p>
+            </div>
+            <div class="result-card p-8 bg-white/[0.02] border border-white/10 rounded-2xl reveal">
+                <h3 class="text-zinc-500 text-xs tracking-widest mb-4 font-bold uppercase">整體平均值</h3>
+                <div class="text-5xl font-light mb-2 text-zinc-400">36 <span class="text-lg text-zinc-600">PR</span></div>
+                <p class="text-zinc-500 text-xs font-light">資訊支援與服務領域的綜合評分。</p>
+            </div>
+            <div class="result-card p-8 bg-white/[0.02] border border-zinc-800 rounded-2xl reveal">
+                <h3 class="text-[#d4af37] text-xs tracking-widest mb-4 font-bold uppercase">發展潛力</h3>
+                <div class="text-5xl font-light mb-2">High</div>
+                <p class="text-zinc-500 text-xs font-light">細膩度與服務品質意識高於同儕。</p>
+            </div>
+        </section>
+
+        <section class="mb-40 reveal">
+            <h2 class="text-2xl font-serif mb-16 flex items-center gap-6">
+                專業職能強度分析 <span class="h-[1px] flex-1 bg-zinc-900"></span>
+            </h2>
+            <div class="space-y-16 max-w-3xl">
+                <div class="skill-group group">
+                    <div class="flex justify-between items-end mb-5">
+                        <span class="text-lg font-light tracking-wide group-hover:text-[#d4af37] transition-colors">撰寫維運與服務所需的紀錄</span>
+                        <span class="pr-val text-[#d4af37] font-medium font-mono text-2xl" data-value="84">PR 0</span>
+                    </div>
+                    <div class="h-[2px] bg-zinc-900 overflow-hidden">
+                        <div class="bar-fill h-full bg-gradient-to-r from-[#d4af37] to-[#b8860b]" style="width: 0%;"></div>
+                    </div>
+                </div>
+
+                <div class="skill-group group">
+                    <div class="flex justify-between items-end mb-5">
+                        <span class="text-lg font-light tracking-wide group-hover:text-[#d4af37] transition-colors">確保資訊服務品質</span>
+                        <span class="pr-val text-[#d4af37] font-medium font-mono text-2xl" data-value="78">PR 0</span>
+                    </div>
+                    <div class="h-[2px] bg-zinc-900 overflow-hidden">
+                        <div class="bar-fill h-full bg-gradient-to-r from-[#d4af37] to-[#b8860b]" style="width: 0%;"></div>
+                    </div>
+                </div>
+
+                <div class="skill-group group opacity-60">
+                    <div class="flex justify-between items-end mb-5">
+                        <span class="text-lg font-light tracking-wide">執行資訊系統更新服務</span>
+                        <span class="pr-val text-zinc-400 font-medium font-mono text-2xl" data-value="34">PR 0</span>
+                    </div>
+                    <div class="h-[1px] bg-zinc-900 overflow-hidden">
+                        <div class="bar-fill h-full bg-zinc-500" style="width: 0%;"></div>
+                    </div>
+                </div>
+
+                <div class="skill-group group opacity-40">
+                    <div class="flex justify-between items-end mb-5">
+                        <span class="text-lg font-light tracking-wide">執行資訊系統安裝</span>
+                        <span class="pr-val text-zinc-500 font-medium font-mono text-2xl" data-value="28">PR 0</span>
+                    </div>
+                    <div class="h-[1px] bg-zinc-900 overflow-hidden">
+                        <div class="bar-fill h-full bg-zinc-700" style="width: 0%;"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="job-recommendation p-16 bg-white/[0.01] border border-[#d4af37]/20 rounded-3xl relative overflow-hidden reveal">
+            <div class="absolute top-0 right-0 p-8">
+                <i class="fas fa-chart-line text-[#d4af37]/10 text-6xl"></i>
+            </div>
+            <div class="max-w-3xl relative z-10">
+                <h3 class="text-[#d4af37] text-[10px] tracking-[0.5em] mb-6 uppercase">Career Blueprint</h3>
+                <h2 class="text-4xl font-serif mb-8 leading-snug">適性職務：資訊服務管理師 (ITSM) / 技術文件撰寫員</h2>
+                
+                <div class="space-y-8 text-zinc-400 text-sm leading-relaxed font-light">
+                    <div>
+                        <h4 class="text-white font-medium mb-2">為什麼選擇？</h4>
+                        <p>
+                            我覺得電腦一碰到故障與異常是最麻煩，也最不想遇到的，可能辛苦的成果一夕之間不見，我可以分析故障根本原因，防止重複發生，確保服務達到預定的可用性標準
+                    </div>
+                    
+                    <div>
+                        <h4 class="text-white font-medium mb-2">職務發展優勢</h4>
+                        <ul class="list-disc list-inside space-y-2">
+                            <li>**標準化專家**：能確保 IT 服務符合 ISO 或 ITIL 等國際標準，這是企業維持數位韌性的核心。</li>
+                            <li>**溝通與紀錄橋樑**：擅長透過紀錄消弭技術端與管理端的資訊落差。</li>
+                            <li>**品質守門員**：對服務品質的堅持，能有效降低系統上線後的錯誤風險。</li>
+                        </ul>
+                    </div>
+
+                    <div class="p-6 bg-[#d4af37]/5 border-l-2 border-[#d4af37] italic">
+                        「優勢在於將『技術』轉化為『穩定服務』的能力。專注於流程管理與品質稽核，將能在 IT 產業中脫穎而出。」
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="py-12 text-center border-t border-white/5">
+        <p class="text-[10px] tracking-widest text-zinc-600 uppercase">© 2026 Lo Wan Xun. All Rights Reserved.</p>
+    </footer>
+
+<script>
+    gsap.registerPlugin(ScrollTrigger);
+
+    // --- 1. 選單控制邏輯 (與 About 頁面同步) ---
+    const menuBtn = document.getElementById('menuBtn');
+    const closeBtn = document.getElementById('closeBtn');
+    const sideNav = document.getElementById('sideNav');
+    const navOverlay = document.getElementById('navOverlay');
+
+    const toggleNav = () => {
+        if (sideNav) sideNav.classList.toggle('active');
+    };
+
+    if (menuBtn) menuBtn.onclick = toggleNav;
+    if (closeBtn) closeBtn.onclick = toggleNav;
+    if (navOverlay) navOverlay.onclick = toggleNav;
+
+    // --- 2. 頁面元素揭露動畫 ---
+    document.querySelectorAll('.reveal').forEach(el => {
+        gsap.from(el, {
+            y: 50,
+            opacity: 0,
+            duration: 1.2,
+            ease: "power3.out",
+            scrollTrigger: {
+                trigger: el,
+                start: "top 85%"
+            }
+        });
+    });
+
+    // --- 3. 專業職能長條圖動畫 (修正變數定義) ---
+    document.querySelectorAll('.skill-group').forEach(group => {
+        const bar = group.querySelector('.bar-fill');
+        const prVal = group.querySelector('.pr-val');
+        
+        if (bar && prVal) {
+            const targetWidth = prVal.getAttribute('data-value');
+
+            // 長條圖伸縮
+            gsap.to(bar, {
+                width: targetWidth + '%',
+                duration: 2,
+                ease: "power4.inOut",
+                scrollTrigger: { trigger: group, start: "top 90%" }
+            });
+
+            // 數字跳動效果
+            let obj = { value: 0 };
+            gsap.to(obj, {
+                value: targetWidth,
+                duration: 2,
+                ease: "power2.out",
+                scrollTrigger: { trigger: group, start: "top 90%" },
+                onUpdate: () => {
+                    prVal.innerText = `PR ${Math.ceil(obj.value)}`;
+                }
+            });
+        }
+    });
+</script>
+</body>
+</html>

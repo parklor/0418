@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UCAN 職業興趣探索 | 羅婉薰</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;600&family=Noto+Sans+TC:wght@300;400&family=Outfit:wght@200;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body class="antialiased">
+    <nav class="fixed-nav">
+    <div class="nav-content">
+        <div class="logo-area">
+            <div class="logo-box">LWX</div>
+            <span class="nav-label">Diagnosis Report</span>
+        </div>
+        
+        <button id="menuBtn" class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </div>
+</nav>
+
+<div id="sideNav" class="side-menu">
+    <div id="navOverlay" class="menu-overlay"></div>
+    <div class="menu-content">
+        <button id="closeBtn" class="close-trigger">Close ✕</button>
+        <ul class="nav-links">
+            <li>
+                <a href="/" class="link-item">
+                    <span class="link-num">01</span>
+                    <span class="link-text">Home</span>
+                </a>
+            </li>
+            <li>
+                <a href="/profile" class="link-item">
+                    <span class="link-num">02</span>
+                    <span class="link-text">About</span>
+                </a>
+            </li>
+            <li>
+                <a href="/results" class="link-item active">
+                    <span class="link-num">03</span>
+                    <span class="link-text">Diagnosis</span>
+                </a>
+            </li>
+            <li>
+                <a href="/mis-test" class="link-item">
+                    <span class="link-num">04</span>
+                    <span class="link-text">MIS</span>
+                </a>
+            </li>
+            <li>
+                <a href="/resume" class="link-item">
+                    <span class="link-num">05</span>
+                    <span class="link-text">Resume</span>
+                </a>
+            </li>
+        </ul>
+        <div class="menu-footer">
+        </div>
+    </div>
+</div>
+
+<script>
+    const menuBtn = document.getElementById('menuBtn');
+    const closeBtn = document.getElementById('closeBtn');
+    const sideNav = document.getElementById('sideNav');
+    const navOverlay = document.getElementById('navOverlay');
+
+    const toggleNav = () => sideNav.classList.toggle('active');
+
+    menuBtn.addEventListener('click', toggleNav);
+    closeBtn.addEventListener('click', toggleNav);
+    navOverlay.addEventListener('click', toggleNav);
+</script>
+
+    <div class="bg-glow"></div>
+
+    <div class="min-h-screen px-6 py-12 md:px-20 md:py-24">
+        <header class="max-w-6xl mx-auto flex justify-between items-start mb-24 md:mb-32">
+            <div class="animate-reveal">
+                <a href="/" class="group flex items-center space-x-3 mb-8">
+                    <span class="w-8 h-[1px] bg-zinc-700 group-hover:w-12 group-hover:bg-[#d4af37] transition-all"></span>
+                    <span class="text-[10px] tracking-[0.4em] text-zinc-500 group-hover:text-white uppercase transition-all">Back</span>
+                </a>
+                <div class="text-zinc-400 font-light text-sm">
+                    <p>施測日期：2025.05.29</p>
+                    <p>單位：靜宜大學 資訊管理學系</p>
+                </div>
+            </div>
+            <div class="text-[10px] tracking-[0.4em] text-zinc-600 uppercase font-outfit text-right">
+                UCAN Diagnosis Report<br>Student ID: 411322493
+            </div>
+        </header>
+
+        <main class="max-w-6xl mx-auto">
+            <div class="mb-20 animate-reveal" style="animation-delay: 0.2s;">
+                <h1 class="font-serif text-5xl md:text-8xl font-light leading-tight mb-6">
+                    職業性格<span class="italic text-[#d4af37]">解析</span>
+                </h1>
+                <div class="flex items-center space-x-6">
+                    <p class="font-outfit text-xl md:text-2xl tracking-[0.6em] text-[#d4af37]">CODE: RS</p>
+                    <div class="h-[1px] flex-1 bg-zinc-900"></div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 mb-32">
+                
+                <div class="result-card p-10 md:p-14 animate-reveal" style="animation-delay: 0.4s;">
+                    <div class="watermark font-outfit">R</div>
+                    <div class="mb-10">
+                        <span class="font-outfit text-xs text-[#d4af37] tracking-[0.3em] uppercase">Type R / 分數：11</span>
+                        <h3 class="font-serif text-3xl md:text-4xl mt-3">實用型 <span class="text-sm font-sans opacity-40 italic block md:inline md:ml-2">Realistic</span></h3>
+                    </div>
+                    <p class="text-zinc-400 text-sm md:text-base leading-loose font-light mb-12">
+                        的實作者（Doer）。喜歡講求實際、動手操作，性格直率且獨立。在面對問題時，偏好具備架構與具體的解決方案，而非純學術性的討論。
+                    </p>
+                    <div class="flex items-center space-x-4">
+                        <div class="flex-1 h-[1px] bg-zinc-800">
+                            <div class="h-full bg-[#d4af37] w-[99%]" style="box-shadow: 0 0 10px #d4af37;"></div>
+                        </div>
+                        <span class="font-outfit text-[10px] text-[#d4af37]">PR 99</span>
+                    </div>
+                </div>
+
+                <div class="result-card p-10 md:p-14 animate-reveal" style="animation-delay: 0.6s;">
+                    <div class="watermark font-outfit">S</div>
+                    <div class="mb-10">
+                        <span class="font-outfit text-xs text-[#d4af37] tracking-[0.3em] uppercase">Type S / 分數：9</span>
+                        <h3 class="font-serif text-3xl md:text-4xl mt-3">社會型 <span class="text-sm font-sans opacity-40 italic block md:inline md:ml-2">Social</span></h3>
+                    </div>
+                    <p class="text-zinc-400 text-sm md:text-base leading-loose font-light mb-12">
+                        典型的「幫助者」（Helper）。對人親切友善，具備高度的同理心與傾聽能力。比起單純的工作，更關心人的感受，並願意協助團隊達成共識與成長。
+                    </p>
+                    <div class="flex items-center space-x-4">
+                        <div class="flex-1 h-[1px] bg-zinc-800">
+                            <div class="h-full bg-[#d4af37] w-[87%]"></div>
+                        </div>
+                        <span class="font-outfit text-[10px] text-[#d4af37]">PR 87</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <section class="mb-32 animate-reveal" style="animation-delay: 0.8s;">
+                <h4 class="font-serif text-2xl mb-12 text-center tracking-widest uppercase text-zinc-500">
+                    High Interest Fields / <span class="text-white">高度興趣職涯</span>
+                </h4>
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+                    <div class="p-6 border border-zinc-900 bg-zinc-900/20 text-center">
+                        <span class="block text-[#d4af37] text-xl font-outfit mb-2">PR 93</span>
+                        <span class="text-xs tracking-widest text-zinc-400">科學技術工程</span>
+                    </div>
+                    <div class="p-6 border border-zinc-900 bg-zinc-900/20 text-center">
+                        <span class="block text-[#d4af37] text-xl font-outfit mb-2">PR 93</span>
+                        <span class="text-xs tracking-widest text-zinc-400">物流運輸</span>
+                    </div>
+                    <div class="p-6 border border-zinc-900 bg-zinc-900/20 text-center">
+                        <span class="block text-[#d4af37] text-xl font-outfit mb-2">PR 92</span>
+                        <span class="text-xs tracking-widest text-zinc-400">資訊科技</span>
+                    </div>
+                    <div class="p-6 border border-zinc-900 bg-zinc-900/20 text-center">
+                        <span class="block text-[#d4af37] text-xl font-outfit mb-2">PR 86</span>
+                        <span class="text-xs tracking-widest text-zinc-400">個人社會服務</span>
+                    </div>
+                    <div class="p-6 border border-zinc-900 bg-zinc-900/20 text-center">
+                        <span class="block text-[#d4af37] text-xl font-outfit mb-2">PR 85</span>
+                        <span class="text-xs tracking-widest text-zinc-400">教育與訓練</span>
+                    </div>
+                </div>
+            </section>
+
+            <div class="flex flex-col lg:flex-row justify-between items-start lg:items-center py-16 border-t border-zinc-900 gap-10 animate-reveal" style="animation-delay: 1s;">
+                <div class="max-w-2xl">
+                    <h4 class="font-serif text-xl mb-4 text-[#d4af37]">RS 跨界優勢解析</h4>
+                    <p class="text-zinc-500 text-sm leading-relaxed">
+                        在資管領域（MIS），你擁有極佳的競爭力。**實用型 (R)** 讓你具備強大的技術實踐能力與對工程邏輯的尊重；**社會型 (S)** 則賦予你卓越的跨部門溝通與使用者需求洞察力。
+                    </p>
+                </div>
+                <div class="flex space-x-4 w-full lg:w-auto">
+                    <a href="{{ url_for('static', filename='docs/ucan_report.pdf') }}" 
+                       target="_blank" 
+                       class="flex-1 lg:flex-none px-10 py-4 border border-zinc-800 text-zinc-400 text-[10px] tracking-[0.4em] hover:bg-[#d4af37] hover:text-black hover:border-[#d4af37] transition-all duration-500 text-center block">
+                        FULL REPORT PDF
+                    </a>
+                </div>
+            </div>
+        </main>
+
+        <footer class="mt-40 text-center pb-10">
+            <span class="text-[9px] tracking-[0.5em] text-zinc-800 uppercase">Data Source: UCAN 大專校院就業職能平台</span>
+        </footer>
+    </div>
+
+</body>
+</html>
