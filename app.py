@@ -1,4 +1,6 @@
 from flask import Flask, render_template
+from flask import send_from_directory
+import os
 
 app = Flask(__name__)
 
@@ -26,6 +28,15 @@ def mis_test():
 @app.route("/resume")
 def resume():
     return render_template("resume.html")
+
+from flask import send_from_directory
+import os
+
+# 加入這段路由處理 image 資料夾
+@app.route('/image/<path:filename>')
+def custom_static(filename):
+    # 這裡會去你根目錄的 image 資料夾找檔案
+    return send_from_directory(os.path.join(app.root_path, 'image'), filename)
 
 if __name__ == "__main__":
     app.run(debug=True)
