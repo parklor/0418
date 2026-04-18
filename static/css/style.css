@@ -136,24 +136,73 @@ body.index-page .fixed-nav { background: rgba(15, 17, 19, 0.8); }
 
 .name { font-size: clamp(3rem, 10vw, 4.5rem); margin: 0; line-height: 1.1; font-family: 'Noto Serif TC', serif; }
 
-.avatar-container { position: relative; cursor: crosshair; width: 320px; height: 400px; }
+.avatar-container { 
+    width: 180px;          /* 寬度 */
+    height: 240px;         /* 高度，設為長方形 */
+    margin: 30px auto;     /* 居中並與下方表格保持距離 */
+    position: relative;
+    overflow: hidden;      /* 確保圖片不超出框框 */
+    border-radius: 8px;    /* 長方形微圓角 */
+    border: 2px solid var(--border); 
+}
+
+.profile-pic {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;  /* 確保照片填滿長方形且比例不失真 */
+    border-radius: 0;   /* 移除原本的圓形設定 */
+    display: block;
+}
+
 .avatar {
-    width: 100%; height: 100%; object-fit: cover; border-radius: 4px;
-    transition: var(--transition); z-index: 2; position: relative;
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+    border-radius: 4px;
+    transition: var(--transition); 
+    z-index: 2; 
+    position: relative;
 }
 .avatar-bg-watercolor {
-    position: absolute; top: 20px; left: 20px; width: 100%; height: 100%;
-    background: var(--surface); border: 1px solid var(--border); z-index: 1;
+    position: absolute; 
+    top: 20px; 
+    left: 20px; 
+    width: 100%; 
+    height: 100%;
+    background: var(--surface); 
+    border: 1px solid var(--border); 
+    z-index: 1;
 }
-.avatar-container:hover .avatar { transform: translate(-15px, -15px); box-shadow: 20px 20px 60px rgba(0,0,0,0.05); }
+.avatar-container:hover 
+.avatar { 
+    ransform: translate(-15px, -15px); 
+    box-shadow: 20px 20px 60px rgba(0,0,0,0.05); 
+}
 
-.profile-table { border-top: 1px solid var(--border); margin-bottom: 80px; }
-.table-row {
-    display: flex; padding: 30px 15px; border-bottom: 1px solid var(--border); transition: var(--transition);
+.profile-table { 
+    border-top: 1px solid var(--border); 
+    margin-bottom: 80px; 
 }
-.table-row:hover { background-color: var(--surface); padding-left: 30px; border-color: var(--accent); }
-.label { width: 120px; font-weight: 700; font-size: 14px; color: #86868b; }
-.value { flex: 1; font-weight: 500; }
+.table-row {
+    display: flex; 
+    padding: 30px 15px; 
+    border-bottom: 1px solid var(--border); 
+    transition: var(--transition);
+}
+.table-row:hover { background-color: var(--surface); 
+    padding-left: 30px; border-color: var(--accent); 
+}
+.label 
+{ 
+    width: 120px; 
+    font-weight: 700; 
+    font-size: 14px; 
+    color: #86868b; }
+
+.value {
+    flex: 1; 
+    font-weight: 500; 
+}
 
 /* =========================================
    5. 封面 (Home Page) 專屬樣式
@@ -180,6 +229,7 @@ body.index-page .hero-container {
 @keyframes fadeInUp {
     to { opacity: 1; transform: translateY(0); }
 }
+
 
 /* 響應式優化 */
 @media (max-width: 850px) {
